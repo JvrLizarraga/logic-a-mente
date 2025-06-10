@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    
+    
+    <span class="imagenDelGato">
+        <h2 class="EsenariosATR"> Los gatos son como el ROCK, no les importa nada </h2>
+        <img alt="API">
+
+        <a href="api.html">
+        <button class="btn-form" type="submit">Nuevo gato</button>
+        </a>
+
+        
+        <a href="index.html">
+        <button class="btn-form" type="submit">Volver</button>
+        </a>
+        
+        
+
+    </span>
+
+    <script>
+        console.log('Gatos')
+
+        const URL = 'https://api.thecatapi.com/v1/images/search';
+
+        fetch(URL)
+            .then(res => res.json())
+            .then(data => {
+                const img = document.querySelector('img');
+                img.src = data[0].url;
+            });
+
+    </script>
+     
+
+</body>
+</html>
